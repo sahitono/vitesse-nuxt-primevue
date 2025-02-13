@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'home',
+  layout: "home",
 })
 
 const online = useOnline()
@@ -8,22 +8,22 @@ const online = useOnline()
 
 <template>
   <div>
-    <Logos mb-6 />
+    <Logos class="mb-6" />
     <ClientOnly>
       <Suspense>
         <PageView v-if="online" />
-        <div v-else text-gray:80>
+        <div v-else class="text-gray:80">
           You're offline
         </div>
         <template #fallback>
-          <div italic op50>
-            <span animate-pulse>Loading...</span>
+          <div class="opacity-50 italic">
+            <span class="animate-pulse">Loading...</span>
           </div>
         </template>
       </Suspense>
       <template #fallback>
-        <div op50>
-          <span animate-pulse>...</span>
+        <div class="opacity-50">
+          <span class="animate-pulse">...</span>
         </div>
       </template>
     </ClientOnly>

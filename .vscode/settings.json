@@ -1,6 +1,6 @@
 {
   "files.associations": {
-    "*.css": "postcss"
+    "*.css": "tailwindcss"
   },
 
   // Disable the default formatter, use eslint instead
@@ -41,5 +41,5 @@
   ],
   "interline-translate.knownPopularWordCount": 6000,
   "iconify.annotations": true,
-  "iconify.inplace": true
+  "iconify.inplace": true,
 }

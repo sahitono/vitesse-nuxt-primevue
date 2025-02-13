@@ -9,26 +9,13 @@ function go() {
 </script>
 
 <template>
-  <div>
-    <input
-      id="input"
-      v-model="name"
-      placeholder="What's your name?"
-      type="text" autocomplete="off"
-      p="x-4 y-2" m="t-5" w="250px"
-      text="center" bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
+  <div @keydown="">
+    <InputText v-model:model-value="name" placeholder="What's your name?" class="w-[250px] text-center" />
+
     <div>
-      <button
-        m-3 text-sm btn
-        :disabled="!name"
-        @click="go"
-      >
+      <Button class="m-3 text-sm" size="small" :disabled="!name" @click="go">
         GO
-      </button>
+      </Button>
     </div>
   </div>
 </template>
