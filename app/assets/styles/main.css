@@ -1,28 +1,56 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@import "../primevue/tailwind.css";
-
 @plugin "tailwindcss-primeui";
 
 @plugin "@iconify/tailwind4" {
   scale: 1.2;
 }
 
+@theme {
+  /* Raw / brand palette */
+  --kala-50: #e7effc;
+  --kala-100: #cdddf9;
+  --kala-200: #9bbaf3;
+  --kala-300: #6896ed;
+  --kala-400: #3573e7;
+  --kala-500: #205dc2;
+  --kala-600: #1b4fa5;
+  --kala-700: #164188;
+  --kala-800: #11336b;
+  --kala-900: #0c244e;
+  --kala-950: #081832;
+}
+
+@theme inline {
+  /* Semantic palette */
+  --color-primary-50: var(--kala-50);
+  --color-primary-100: var(--kala-100);
+  --color-primary-200: var(--kala-200);
+  --color-primary-300: var(--kala-300);
+  --color-primary-400: var(--kala-400);
+  --color-primary-500: var(--kala-500);
+  --color-primary-600: var(--kala-600);
+  --color-primary-700: var(--kala-700);
+  --color-primary-800: var(--kala-800);
+  --color-primary-900: var(--kala-900);
+  --color-primary-950: var(--kala-950);
+}
+
 
 /* Primary and Surface Palettes */
 :root {
-    --p-primary-50: #ecfdf5;
-    --p-primary-100: #d1fae5;
-    --p-primary-200: #a7f3d0;
-    --p-primary-300: #6ee7b7;
-    --p-primary-400: #34d399;
-    --p-primary-500: #10b981;
-    --p-primary-600: #059669;
-    --p-primary-700: #047857;
-    --p-primary-800: #065f46;
-    --p-primary-900: #064e3b;
-    --p-primary-950: #022c22;
+    --p-primary-50: var(--color-primary-50);
+    --p-primary-100: var(--color-primary-100);
+    --p-primary-200: var(--color-primary-200);
+    --p-primary-300: var(--color-primary-300);
+    --p-primary-400: var(--color-primary-400);
+    --p-primary-500: var(--color-primary-500);
+    --p-primary-600: var(--color-primary-600);
+    --p-primary-700: var(--color-primary-700);
+    --p-primary-800: var(--color-primary-800);
+    --p-primary-900: var(--color-primary-900);
+    --p-primary-950: var(--color-primary-950);
     --p-surface-0: #ffffff;
     --p-surface-50: #fafafa;
     --p-surface-100: #f4f4f5;
@@ -57,16 +85,15 @@
     --p-text-hover-muted-color: var(--p-surface-600);
 }
 
-/* 
+/*
  * Dark Mode
  * Defaults to system, change the selector to match the darkMode in tailwind.config.
- * For example; 
- * darkMode: ['selector', '[class*="app-dark"]'] 
+ * For example;
+ * darkMode: ['selector', '[class*="app-dark"]']
  * should be;
  * :root[class="app-dark"] {
 */
-@media (prefers-color-scheme: dark) {
-    :root[class="dark"] {
+:root.dark {
         --p-primary-color: var(--p-primary-400);
         --p-primary-contrast-color: var(--p-surface-900);
         --p-primary-hover-color: var(--p-primary-300);
@@ -82,5 +109,4 @@
         --p-text-hover-color: var(--p-surface-0);
         --p-text-muted-color: var(--p-surface-400);
         --p-text-hover-muted-color: var(--p-surface-300);
-    }
 }

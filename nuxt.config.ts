@@ -1,6 +1,12 @@
+import { definePreset } from "@openvue/themes"
+import Aura from "@openvue/themes/aura"
 import tailwindcss from "@tailwindcss/vite"
 import { pwa } from "./app/config/pwa"
 import { appDescription } from "./app/constants/index"
+
+const customizedPreset = definePreset(Aura, {
+
+})
 
 export default defineNuxtConfig({
   modules: [
@@ -10,7 +16,7 @@ export default defineNuxtConfig({
     "@vite-pwa/nuxt",
     "@nuxt/eslint",
     "@nuxtjs/i18n",
-    "@primevue/nuxt-module",
+    "@openvue/nuxt-module",
     "@nuxt/image",
     "@vee-validate/nuxt",
     "@morev/vue-transitions/nuxt",
@@ -91,7 +97,9 @@ export default defineNuxtConfig({
   },
   primevue: {
     options: {
-      theme: "none",
+      theme: {
+        preset: customizedPreset,
+      },
     },
   },
 
