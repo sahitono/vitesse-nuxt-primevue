@@ -1,40 +1,45 @@
+@import "@fontsource-variable/ibm-plex-sans";
 @import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @plugin "tailwindcss-primeui";
 
 @plugin "@iconify/tailwind4" {
-  scale: 1.2;
+    prefix: "i";
+    scale: 1.2;
 }
 
 @theme {
-  /* Raw / brand palette */
-  --kala-50: #e7effc;
-  --kala-100: #cdddf9;
-  --kala-200: #9bbaf3;
-  --kala-300: #6896ed;
-  --kala-400: #3573e7;
-  --kala-500: #205dc2;
-  --kala-600: #1b4fa5;
-  --kala-700: #164188;
-  --kala-800: #11336b;
-  --kala-900: #0c244e;
-  --kala-950: #081832;
+    --font-display: "IBM Plex Sans Variable", sans-serif;
+
+    /* Raw / brand palette */
+    --kala-50: #e7effc;
+    --kala-100: #cdddf9;
+    --kala-200: #9bbaf3;
+    --kala-300: #6896ed;
+    --kala-400: #3573e7;
+    --kala-500: #205dc2;
+    --kala-600: #1b4fa5;
+    --kala-700: #164188;
+    --kala-800: #11336b;
+    --kala-900: #0c244e;
+    --kala-950: #081832;
 }
 
 @theme inline {
-  /* Semantic palette */
-  --color-primary-50: var(--kala-50);
-  --color-primary-100: var(--kala-100);
-  --color-primary-200: var(--kala-200);
-  --color-primary-300: var(--kala-300);
-  --color-primary-400: var(--kala-400);
-  --color-primary-500: var(--kala-500);
-  --color-primary-600: var(--kala-600);
-  --color-primary-700: var(--kala-700);
-  --color-primary-800: var(--kala-800);
-  --color-primary-900: var(--kala-900);
-  --color-primary-950: var(--kala-950);
+    /* Semantic palette */
+    --color-primary-50: var(--kala-50);
+    --color-primary-100: var(--kala-100);
+    --color-primary-200: var(--kala-200);
+    --color-primary-300: var(--kala-300);
+    --color-primary-400: var(--kala-400);
+    --color-primary-500: var(--kala-500);
+    --color-primary-600: var(--kala-600);
+    --color-primary-700: var(--kala-700);
+    --color-primary-800: var(--kala-800);
+    --color-primary-900: var(--kala-900);
+    --color-primary-950: var(--kala-950);
 }
 
 
@@ -66,6 +71,11 @@
     --p-content-border-radius: 6px;
 }
 
+html {
+  font-family: var(--font-display);
+  font-size: 12px;
+}
+
 /* Light */
 :root {
     --p-primary-color: var(--p-primary-500);
@@ -94,19 +104,19 @@
  * :root[class="app-dark"] {
 */
 :root.dark {
-        --p-primary-color: var(--p-primary-400);
-        --p-primary-contrast-color: var(--p-surface-900);
-        --p-primary-hover-color: var(--p-primary-300);
-        --p-primary-active-color: var(--p-primary-200);
-        --p-content-border-color: var(--p-surface-700);
-        --p-content-hover-background: var(--p-surface-800);
-        --p-content-hover-color: var(--p-surface-0);
-        --p-highlight-background: color-mix(in srgb, var(--p-primary-400), transparent 84%);
-        --p-highlight-color: rgba(255, 255, 255, 0.87);
-        --p-highlight-focus-background: color-mix(in srgb, var(--p-primary-400), transparent 76%);
-        --p-highlight-focus-color: rgba(255, 255, 255, 0.87);
-        --p-text-color: var(--p-surface-0);
-        --p-text-hover-color: var(--p-surface-0);
-        --p-text-muted-color: var(--p-surface-400);
-        --p-text-hover-muted-color: var(--p-surface-300);
+    --p-primary-color: var(--p-primary-400);
+    --p-primary-contrast-color: var(--p-surface-900);
+    --p-primary-hover-color: var(--p-primary-300);
+    --p-primary-active-color: var(--p-primary-200);
+    --p-content-border-color: var(--p-surface-700);
+    --p-content-hover-background: var(--p-surface-800);
+    --p-content-hover-color: var(--p-surface-0);
+    --p-highlight-background: color-mix(in srgb, var(--p-primary-400), transparent 84%);
+    --p-highlight-color: rgba(255, 255, 255, 0.87);
+    --p-highlight-focus-background: color-mix(in srgb, var(--p-primary-400), transparent 76%);
+    --p-highlight-focus-color: rgba(255, 255, 255, 0.87);
+    --p-text-color: var(--p-surface-0);
+    --p-text-hover-color: var(--p-surface-0);
+    --p-text-muted-color: var(--p-surface-400);
+    --p-text-hover-muted-color: var(--p-surface-300);
 }
